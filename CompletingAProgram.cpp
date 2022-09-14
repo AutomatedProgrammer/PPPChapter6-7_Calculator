@@ -171,8 +171,8 @@ double primary()
 		return - primary();
 	case '+':
 		return primary();
-    case name:
-	{
+    	case name: // the reason there's a whole case for name is because without it you can't actually use the variables you define.
+	{ //if you defined x and y and then tried to multiply them for example (x*y) it would just spit out an error
 		Token next = ts.get();
 		if (next.kind == '=') {	// handle name = expression
 			double d = expression();
